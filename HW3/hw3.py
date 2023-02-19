@@ -60,19 +60,38 @@ print('the product of pairs of numbers in a list is :',
 print('the product of pairs of numbers in a list is :',
       product_of_pairs(task_list_4))
 
-# Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
+# Define a list of real numbers. Write a program that finds the difference between the maximum and minimum values of the fractional parts of the elements.
 
-# Пример:
+# Example:
 
-# - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+# [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
 def fructional_diff(list):
     fructional_list = []
     for number in list:
         x = round(number - int(number), 2)
-        fructional_list.append(x)
+        if x != 0:
+            fructional_list.append(x)
     print(fructional_list)
     return max(fructional_list) - min(fructional_list)
 
-our_list = [1.1, 1.2, 3.1, 5.02, 10.01]
+our_list = [1.1, 1.2, 3.1, 5, 10.01]
 print(fructional_diff(our_list))
+
+# Write a program that will convert a decimal number to binary.
+
+# Example:
+
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
+
+def number_to_binary(n):
+    binary_n = bin(n)
+    binary_n = binary_n[2:] # to remobe 0b from the string
+    return binary_n
+
+print(number_to_binary(45))
+print(number_to_binary(3))
+print(number_to_binary(2))
+print(number_to_binary(101))
