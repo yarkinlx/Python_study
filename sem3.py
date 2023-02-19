@@ -3,7 +3,7 @@
 # реализуйте алгоритм задания случайных чисел без использования встроенного генератора псевдослучайных чисел
 
 import random
-'''
+
 def generate_random_list(n):
     random_list = []
     for i in range(n):
@@ -13,7 +13,7 @@ def generate_random_list(n):
 
 print(generate_random_list(10))
 print(generate_random_list(10))
-'''
+
 
 # def generate_random_list(n):
 #     random_list = []
@@ -38,18 +38,18 @@ print(generate_random_list(10))
 # ['efg23', '79234gefg']
 
 
-# def look_for_i(our_list, searchable):
+def look_for_i(our_list, searchable):
 
-#     result_string = []
+    result_string = []
 
-#     for i in our_list:
-#         if searchable in i:
-#             result_string.append(i)
+    for i in our_list:
+        if searchable in i:
+            result_string.append(i)
 
-#     return result_string
+    return result_string
 
 
-# print(look_for_i(['efg23', '79234gefg', 'sdgs', 'g53'], '2'))
+print(look_for_i(['efg23', '79234gefg', 'sdgs', 'g53'], '2'))
 
 
 # 3. Напишите программу, которая определит позицию второго вхождения
