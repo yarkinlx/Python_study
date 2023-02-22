@@ -66,6 +66,7 @@ print('the product of pairs of numbers in a list is :',
 
 # [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
+
 def fructional_diff(list):
     fructional_list = []
     for number in list:
@@ -74,6 +75,7 @@ def fructional_diff(list):
             fructional_list.append(x)
     print(fructional_list)
     return max(fructional_list) - min(fructional_list)
+
 
 our_list = [1.1, 1.2, 3.1, 5, 10.01]
 print(fructional_diff(our_list))
@@ -86,12 +88,46 @@ print(fructional_diff(our_list))
 # - 3 -> 11
 # - 2 -> 10
 
+
 def number_to_binary(n):
     binary_n = bin(n)
-    binary_n = binary_n[2:] # to remobe 0b from the string
+    binary_n = binary_n[2:]  # to remobe 0b from the string
     return binary_n
+
 
 print(number_to_binary(45))
 print(number_to_binary(3))
 print(number_to_binary(2))
 print(number_to_binary(101))
+
+
+# Set a number. Make a list of Fibonacci numbers, including those for negative indices.
+
+# Example:
+
+# For k = 8, the list will look like this: [-21 ,13, -8, 5, -3, 2, -1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
+
+
+# Числа негафибоначчи определяются индуктивно следующим рекуррентным соотношением:
+
+# F−1 = 1,
+# F−2 = -1,
+# Fn = F(n+2)−F(n+1).
+
+def negaFibonacci(k):
+    negaFibonacci_list = []
+    a = 1
+    b = 1
+    for i in range(k - 1):
+        a, b = b, a + b
+        negaFibonacci_list.append(a)
+    a = 0
+    b = -1
+    for i in range(k):
+        a, b = b, a - b
+        negaFibonacci_list.insert(0, a)
+
+    return negaFibonacci_list
+
+
+print(negaFibonacci(8))
