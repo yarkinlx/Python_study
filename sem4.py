@@ -12,6 +12,10 @@
 # print(max(number_list))
 # print(min(number_list))
 
+import numpy as np
+from math import sqrt
+
+
 def find_high_low(number_string):
     number_list = number_string.split(' ')
     number_list = list(map(int, number_list))
@@ -19,17 +23,17 @@ def find_high_low(number_string):
     lowest = min(number_list)
     return f'highest is {highest} and lowest is {lowest}'
 
-number_string  = input("Enter a string of numbers separated by spaces: ")
+
+number_string = input("Enter a string of numbers separated by spaces: ")
 print(find_high_low(number_string))
 
 
-
-# 2. Find the roots of the quadratic equation Ax² + Bx + C = 0 in two ways: 
-# 1) Using mathematical formulas to find the roots of a quadratic equation 
+# 2. Find the roots of the quadratic equation Ax² + Bx + C = 0 in two ways:
+# 1) Using mathematical formulas to find the roots of a quadratic equation
 # 2) with the help of additional Python libraries
 
-from math import sqrt
-def quadratic_equation(a, b , c):
+
+def quadratic_equation(a, b, c):
     discriminant = (b**2) - (4 * a * c)
     if discriminant < 0:
         return 'there no roots, D < 0'
@@ -41,15 +45,15 @@ def quadratic_equation(a, b , c):
         x_2 = (-b - sqrt(discriminant)) / (2 * a)
         return f'x_1 is {x_1}, x_2 is {x_2}'
 
+
 a = int(input('enter a: '))
 b = int(input('enter b: '))
 c = int(input('enter c: '))
-print(quadratic_equation(a,b,c))
-# −4x2 + 28x — 49 = 0 
+print(quadratic_equation(a, b, c))
+# −4x2 + 28x — 49 = 0
 # 3x2— 4x+94 = 0
-# x2— 10 = 39 
+# x2— 10 = 39
 
-import numpy as np
 
 # input coefficients
 A = float(input("Enter the coefficient of x^2: "))
@@ -64,25 +68,25 @@ roots = np.roots(coefficients)
 
 # print the roots
 print("The roots are", roots[0], "and", roots[1])
-# 
-# 
+#
+#
 # Note: The numpy.roots function returns an array of complex roots. If the roots are real, the imaginary part of the complex roots will be 0.
 
 
 # Define two numbers. Write a program that finds the least common multiple of these two numbers.
 # lcm(a, b) = (a * b) / gcd(a, b)
 
-def find_lcm(a,b):
+def find_lcm(a, b):
     def gcd(a, b):
         while b:
             a, b = b, a % b
         return a
-    
-    lcm = (a*b) / gcd(a,b)
+
+    lcm = (a*b) / gcd(a, b)
     return f'least common multiple is {lcm} '
+
 
 a = int(int(input('enter first number: ')))
 b = int(int(input('enter second number: ')))
 
-print(find_lcm(a,b))
-
+print(find_lcm(a, b))
